@@ -13,9 +13,10 @@ func main() {
 		port = "8080"
 	}
 
-	http.HandleFunc("/markdown", GenerateMarkdown)
-	http.Handle("/", http.FileServer(http.Dir("public")))
-	http.ListenAndServe(":"+port, nil)
+	mux := http.NewServeMux()
+	mux.HandleFunc("/markdown", GenerateMarkdown)
+	mux.Handle("/", http.FileServer(http.Dir("public")))
+	http.ListenAndServe(":"+port, mux)
 }
 
 func GenerateMarkdown(rw http.ResponseWriter, r *http.Request) {
