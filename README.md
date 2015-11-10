@@ -1,3 +1,7 @@
+# Go Server
+
+Simple server implementation by golang
+
 ## Run in Docker
 
 First, install [docker toolbox](https://www.docker.com/docker-toolbox)
