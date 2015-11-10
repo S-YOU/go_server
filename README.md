@@ -16,6 +16,10 @@ $ docker run -d -p 80:8080 --name go_server docker_go
 
 From now, you can access `docker-machine ip default` in browser
 
+```
+$ open http://$(docker-machine ip default)
+```
+
 You can remove docker go_server by
 
 ```
