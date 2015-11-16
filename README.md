@@ -1,5 +1,7 @@
 # Go Server
 
+[![Docker Repository on Quay](https://quay.io/repository/awakia/go_server/status?token=9ec28669-a67d-4153-b3e2-90342be83c81 "Docker Repository on Quay")](https://quay.io/repository/awakia/go_server)
+
 Simple server implementation by golang
 
 ## Run in Docker
