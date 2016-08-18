@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  minReadySeconds: 30
+  strategy:
+    type: RollingUpdate
+  replicas: 1
+  template:
+    metadata:
+      name: nginx
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: rails-nginx
+        image: koudaiii/nginx-rails-docker-sample
+        ports:
+        - containerPort: 80
+        - containerPort: 8000
+        env:
+          - name: APP_URL
+            value: go
+          - name: APP_PORT
+            value: "8080"

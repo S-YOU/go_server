@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: go
+  labels:
+    name: app
+    app: go
+spec:
+  type: NodePort
+  ports:
+    - name: go
+      port: 8080
+      targetPort: 8080
+  selector:
+    name: app
+    app: go
+    color: blue
